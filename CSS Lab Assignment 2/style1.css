@@ -1,51 +1,107 @@
-
 body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://images.pexels.com/photos/1925536/pexels-photo-1925536.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    margin: 0;
 }
 
-.calculator {
-    border: 5px solid #333;
+.login-container {
+    width: 400px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
     border-radius: 10px;
-    padding: 10px;
-    background-color: #666;
-    width: 260px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
-.display {
-    background-color: white;
-    border: 2px solid #333;
-    height: 40px;
-    margin-bottom: 10px;
-    justify-content: flex-end;
+.login-form {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 0 10px;
-    font-size: 24px;
-    font-family: Arial, sans-serif;
 }
 
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+.avatar {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100px;
+    height: 100px; 
+    right:25%;
+    
 }
 
-button {
-    background-color: #00a2a2;
+.avatar img {
+    position: absolute;
+    width: 200%; 
+    height: auto;
+    bottom: 100%;
+    transform: translateY(50%);
+}
+
+
+
+.login-title {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 24px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    font-family: 'Times New Roman', serif; 
+}
+
+
+.input-group {
+    margin-bottom: 15px;
+    width: 100%;
+   
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+}
+
+.input-group input::placeholder {
+    color: white;
+}
+
+.terms {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.terms a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+.login-btn {
+    padding: 10px 20px;
+    width: 100%;
+    background: green;
+    color: white;
     border: none;
     border-radius: 5px;
-    height: 50px;
-    font-size: 18px;
-    color: white;
-    font-family: Arial, sans-serif;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 16px;
+    transition: background 0.3s;
 }
 
-button:hover {
-    background-color: #008080;
+.login-btn:hover {
+    background: #0088cc;
 }
+
+.input-group input::placeholder {
+    color: lightgray; 
+}
+
