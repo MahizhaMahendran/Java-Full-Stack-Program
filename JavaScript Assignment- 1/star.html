@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Display</title>
+    <script>
+        function displayPattern() {
+            let numRows = parseInt(document.getElementById("numRows").value);
+            let pattern = "";
+            for (let i = 1; i <= numRows; i++) {
+                for (let j = 1; j <= i; j++) {
+                    pattern += " * ";
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("ResultDiv").innerHTML = pattern;
+        }
+    </script>
+</head>
+<body>
+    <label for="numRows">Enter the Number:</label>
+    <input type="text" id="numRows">
+    <br> <br>
+    <button onclick="displayPattern()">Display Pattern</button>
+    <br><br>
+    <div id="ResultDiv"></div>
+</body>
+</html>

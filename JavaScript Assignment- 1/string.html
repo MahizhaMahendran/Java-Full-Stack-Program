@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Functions</title>
+    <script>
+        function getStringInput() {
+            return document.getElementById("stringInput").value;
+        }
+
+        function showResult(result) {
+            document.getElementById("result").innerHTML = result;
+        }
+
+        function stringLength() {
+            let str = getStringInput();
+            showResult("Length: " + str.length);
+        }
+
+        function stringCharAt() {
+            let str = getStringInput();
+            let index = parseInt(prompt("Enter index:"));
+            showResult("Character at index " + index + ": " + str.charAt(index));
+        }
+
+        function stringSlice() {
+            let str = getStringInput();
+            let start = parseInt(prompt("Enter start index:"));
+            let end = parseInt(prompt("Enter end index:"));
+            showResult("Slice: " + str.slice(start, end));
+        }
+
+        function stringSubstring() {
+            let str = getStringInput();
+            let start = parseInt(prompt("Enter start index:"));
+            let end = parseInt(prompt("Enter end index:"));
+            showResult("Substring: " + str.substring(start, end));
+        }
+
+        function stringSubstr() {
+            let str = getStringInput();
+            let start = parseInt(prompt("Enter start index:"));
+            let length = parseInt(prompt("Enter length:"));
+            showResult("Substr: " + str.substr(start, length));
+        }
+
+        function stringToUpperCase() {
+            let str = getStringInput();
+            showResult("Uppercase: " + str.toUpperCase());
+        }
+
+        function stringToLowerCase() {
+            let str = getStringInput();
+            showResult("Lowercase: " + str.toLowerCase());
+        }
+
+        function stringConcat() {
+            let str1 = getStringInput();
+            let str2 = prompt("Enter string to concatenate:");
+            showResult("Concatenated: " + str1.concat(str2));
+        }
+
+        function stringTrim() {
+            let str = getStringInput();
+            showResult("Trimmed: " + str.trim());
+        }
+
+        function stringTrimStart() {
+            let str = getStringInput();
+            showResult("Trimmed Start: " + str.trimStart());
+        }
+
+        function stringTrimEnd() {
+            let str = getStringInput();
+            showResult("Trimmed End: " + str.trimEnd());
+        }
+
+        function stringRepeat() {
+            let str = getStringInput();
+            let count = parseInt(prompt("Enter repeat count:"));
+            showResult("Repeated: " + str.repeat(count));
+        }
+
+        function stringReplace() {
+            let str = getStringInput();
+            let search = prompt("Enter string to replace:");
+            let replacement = prompt("Enter replacement string:");
+            showResult("Replaced: " + str.replace(search, replacement));
+        }
+
+        function stringReplaceAll() {
+            let str = getStringInput();
+            let search = prompt("Enter string to replace:");
+            let replacement = prompt("Enter replacement string:");
+            showResult("Replaced All: " + str.replaceAll(search, replacement));
+        }
+
+        function stringSplit() {
+            let str = getStringInput();
+            let delimiter = prompt("Enter delimiter:");
+            let result = str.split(delimiter);
+            showResult("Split: " + result.join(", "));
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <label for="stringInput">Enter a string:</label>
+        <input type="text" id="stringInput">
+    </div>
+    <br>
+    <button onclick="stringLength()">String Length</button>
+    <br><br>
+
+    <button onclick="stringCharAt()">String charAt()</button>
+    <br><br>
+
+    <button onclick="stringSlice()">String slice()</button>
+    <br><br>
+
+    <button onclick="stringSubstring()">String substring()</button>
+    <br><br>
+
+    <button onclick="stringSubstr()">String substr()</button>
+    <br><br>
+
+    <button onclick="stringToUpperCase()">String toUpperCase()</button>
+    <br><br>
+
+    <button onclick="stringToLowerCase()">String toLowerCase()</button>
+    <br><br>
+
+    <button onclick="stringConcat()">String concat()</button>
+    <br><br>
+
+    <button onclick="stringTrim()">String trim()</button>
+    <br><br>
+
+    <button onclick="stringTrimStart()">String trimStart()</button>
+    <br><br>
+
+    <button onclick="stringTrimEnd()">String trimEnd()</button>
+    <br><br>
+
+    <button onclick="stringRepeat()">String repeat()</button>
+    <br><br>
+
+    <button onclick="stringReplace()">String replace()</button>
+    <br><br>
+
+    <button onclick="stringReplaceAll()">String replaceAll()</button>
+    <br><br>
+
+    <button onclick="stringSplit()">String split()</button>
+    <br><br>
+    
+    <div id="result"></div>
+</body>
+</html>

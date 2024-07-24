@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Check</title>
+    <script>
+        function checkPalindrome() {
+            let str = document.getElementById("str").value.toLowerCase(); 
+            let len = str.length;
+            let isPalindrome = true;
+            for (let i = 0; i < len / 2; i++) {
+                if (str[i] !== str[len - 1 - i]) {
+                    isPalindrome = false;
+                    break;
+                }
+            }
+            if (isPalindrome) {
+                document.getElementById("ResultDiv").innerHTML = "<b>" + str + " is a Palindrome.</b>";
+            } else {
+                document.getElementById("ResultDiv").innerHTML = "<b>" + str + " is NOT a Palindrome.</b>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="str">Enter a String:</label>
+    <input type="text" id="str" title="String"><br><br>
+    <button onclick="checkPalindrome()">Check Palindrome</button>
+    <br><br>
+    <div id="ResultDiv"></div>
+</body>
+</html>
