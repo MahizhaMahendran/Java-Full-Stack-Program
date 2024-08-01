@@ -1,0 +1,103 @@
+<div class="container">
+  <h1 class="title">Travel Management System</h1>
+  
+  <form (ngSubmit)="addTravel()" #travelForm="ngForm">
+    <div>
+      <label for="name">Name:</label>
+      <input 
+        type="text" 
+        id="name" 
+        [(ngModel)]="newTravel.name" 
+        name="name" 
+        required
+        placeholder="Enter the traveler's name" 
+        title="Enter the traveler's name"
+      >
+    </div>
+    <div>
+      <label for="destination">Destination:</label>
+      <input 
+        type="text" 
+        id="destination" 
+        [(ngModel)]="newTravel.destination" 
+        name="destination" 
+        required
+        placeholder="Enter the travel destination" 
+        title="Enter the travel destination"
+      >
+    </div>
+    <div>
+      <label for="fromDate">From Date:</label>
+      <input 
+        type="date" 
+        id="fromDate" 
+        [(ngModel)]="newTravel.fromDate" 
+        name="fromDate" 
+        required
+        title="Select the start date of the travel"
+      >
+    </div>
+    <div>
+      <label for="toDate">To Date:</label>
+      <input 
+        type="date" 
+        id="toDate" 
+        [(ngModel)]="newTravel.toDate" 
+        name="toDate" 
+        required
+        title="Select the end date of the travel"
+      >
+    </div>
+    <div>
+      <label for="noOfPersons">No. of Persons:</label>
+      <input 
+        type="number" 
+        id="noOfPersons" 
+        [(ngModel)]="newTravel.noOfPersons" 
+        name="noOfPersons" 
+        min="1" 
+        required
+        placeholder="Enter the number of persons" 
+        title="Enter the number of persons"
+      >
+    </div>
+    <button type="submit">Update</button>
+    <button type="button" (click)="deleteTravel()">Delete</button>
+    <button type="button" (click)="saveTravels()">Save</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Select</th>
+        <th>Name</th>
+        <th>Destination</th>
+        <th>From Date</th>
+        <th>To Date</th>
+        <th>No. of Persons</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let travel of travels; let i = index" (click)="selectTravel(i)">
+        <td>
+          <label>
+            <input 
+              type="checkbox" 
+              [checked]="selectedIndex === i"
+              (change)="onCheckboxChange(i)" 
+              title="Select this travel item">
+           
+            <span class="sr-only">Select travel item {{ i + 1 }}</span>
+          </label>
+        </td>
+        <td>{{ travel.name }}</td>
+        <td>{{ travel.destination }}</td>
+        <td>{{ travel.fromDate }}</td>
+        <td>{{ travel.toDate }}</td>
+        <td>{{ travel.noOfPersons }}</td>
+      </tr>
+    </tbody>
+    
+  
+  </table>
+</div>
